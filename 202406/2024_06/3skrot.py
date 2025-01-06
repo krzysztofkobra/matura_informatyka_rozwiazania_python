@@ -34,3 +34,20 @@ for liczba in liczby:
             najwieksza = liczba
 
 print(f"ile liczb nie ma skrotu: {ile_nie_ma}, najwieksza z nich: {najwieksza}")
+
+# 3.3 pewnie dałoby się ładniej i może krócej ale działa
+
+import math
+
+liczby2 = []
+skroty = []
+
+plik2 = open('pliki/skrot2.txt', 'r')
+for linia in plik2:
+    liczba = int(linia.strip())
+    liczby2.append(liczba)
+    skroty.append(oblicz_nieparzysty_skrot(liczba))
+
+for i in range(len(liczby2)):
+    if math.gcd(liczby2[i], skroty[i]) == 7:
+        print(liczby2[i])
